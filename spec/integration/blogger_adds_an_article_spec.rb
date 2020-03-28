@@ -5,7 +5,7 @@ feature"Blogger adds an article" do
         visit articles_path
         expect(page).to have_content("Listing articles")
         click_link "New article"
-        expect(page).to have_content("New article")
+        expect(page).to have_content("New Article")
         expect(page).to have_field("Title")
         expect(page).to have_field("Text")
     end
