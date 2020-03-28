@@ -8,7 +8,7 @@ Feature: Add a new blog entry
 Scenario: As a blogger I want to be able to navigate from the homepage to the new article form
   Given I am on the homepage
   When I click on the "My Blog" link
-  Then I should be on the "Listing Articles" page
+  Then I should be on the "Listing articles" page
   When I click on the "New article" link
   Then I should be on the "New Article" page
   And I should see the "Title" field 
