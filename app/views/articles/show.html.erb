@@ -9,8 +9,7 @@
 </p>
 
 <h2>Comments</h2>
-<%= render @article.comments %>
-<! ––
+<%#= render @article.comments %> 
 <% @article.comments.each do |comment| %>
     <p>
         <strong>Commenter:</strong>
@@ -21,12 +20,18 @@
         <strong>Comment:</strong>
         <%= comment.body %>
     </p>
+    
+    <p>
+    <%= link_to 'Destroy Comment', [comment.article, comment],
+        method: :delete,
+        data: { confirm: 'Are you sure?' } %>
+    </p>
 <% end %>
-––>
+
+
 
 <h2>Add a comment:</h2>
-<%= render 'comments/form' %>
-<! ––
+<%#= render 'comments/form' %>
 <%= form_for([@article, @article.comments.build]) do |f| %>
     <p>
         <%= f.label :commenter %><br>
@@ -40,7 +45,7 @@
         <%= f.submit %>
     </p>
 <% end %>
-––>
+
 
 <%= link_to 'Article List', articles_path %>
 
